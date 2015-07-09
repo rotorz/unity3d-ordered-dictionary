@@ -12,6 +12,7 @@ Features
 --------
 
 - Default inspector with intuitive interface.
+- Drop insertion for UnityEngine.Object's where name is used for key.
 - Serializable dictionary asset files.
 - Supports any serializable key and value types.
 - Ordered dictionary.
