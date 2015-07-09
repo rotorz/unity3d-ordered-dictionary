@@ -8,6 +8,8 @@ Licensed under the MIT license. See LICENSE file in the project root for full li
 information. DO NOT contribute to this project unless you accept the terms of the
 contribution agreement.
 
+![screenshot](https://bitbucket.org/rotorz/ordered-dictionary-asset-for-unity/raw/master/screenshot.png)
+
 Features
 --------
 
