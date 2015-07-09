@@ -49,13 +49,17 @@ Example 1: Sprite Library (C#)
     :::csharp
     // SpriteLibrary.cs
     using Rotorz.Extras.Collections;
-	using UnityEditor;
+    using UnityEditor;
     using UnityEngine;
 
-	// Note: The `CreateAssetMenu` attribute requires Unity 5+
+    // Note: The `CreateAssetMenu` attribute requires Unity 5+
 
-	[CreateAssetMenu]
+    [CreateAssetMenu]
     public class SpriteLibrary : OrderedDictionaryAsset<string, Sprite> {
+
+        // Additional properties are shown above the "Entries" interface.
+        public string customStringProperty = "Hello World!";
+
     }
 
 Example 2: Sprite Library (UnityScript)
@@ -65,10 +69,14 @@ Example 2: Sprite Library (UnityScript)
     // SpriteLibrary.js
     import Rotorz.Extras.Collections;
 
-	// Note: The `CreateAssetMenu` attribute requires Unity 5+
+    // Note: The `CreateAssetMenu` attribute requires Unity 5+
 
-	@CreateAssetMenu
+    @CreateAssetMenu
     class SpriteLibrary extends OrderedDictionaryAsset.<String, Sprite> {
+
+        // Additional properties are shown above the "Entries" interface.
+        var customStringProperty:String = 'Hello World!';
+
     }
 
 Submission to the Unity Asset Store
