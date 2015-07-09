@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>OrderedDictionaryAsset.Editor</name>
+  </assembly>
+  <members>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector">
+      <summary>
+            Inspector that is assumed by default for all <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAsset" />
+            subclasses but can be subclassed to override its behavior.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Rotorz.Extras.Collections.OrderedDictionaryAssetInspector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.CanAddNewInput">
+      <summary>
+            Gets a value indicating whether the user can click the add new input button.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.CreateListAdaptor(Rotorz.Extras.Collections.OrderedDictionaryAsset)">
+      <summary>
+            Creates a <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> that will be used
+            to draw and manipulate the list of ordered dictionary entries.
+            </summary>
+      <param name="target">The target ordered dictionary asset.</param>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> instance.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.CreateListControl">
+      <summary>
+            Creates the <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> that will be used to draw
+            and manipulate the list of ordered dictionary entries.
+            </summary>
+      <returns>
+            The new <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> instance.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.CreateNewItemListAdaptor(Rotorz.Extras.Collections.OrderedDictionaryAsset)">
+      <summary>
+            Creates a <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> which will be used
+            to draw input controls allowing the user to insert a new entry into the
+            ordered dictionary.
+            </summary>
+      <param name="target">The target ordered dictionary that contains exactly one
+            element representing the new input.</param>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> instance.
+            </returns>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DefaultDictionaryTitleText"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DictionaryTitleText">
+      <summary>
+            Gets or sets the title text of the dictionary's <see cref="T:Rotorz.ReorderableList.ReorderableListControl" />.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawAddNewInputButton(UnityEngine.Rect)">
+      <summary>
+            Draws button for adding new input.
+            </summary>
+      <param name="position">Absolute position of button in GUI.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawDictionaryErrors">
+      <summary>
+            Draws error feedback relating to the ordered dictionary.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawDictionaryGUI">
+      <summary>
+            Draws the dictionary GUI.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawDictionaryListControl">
+      <summary>
+            Draws the <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> using the <see cref="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.ListAdaptor" />.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawDictionaryNewInput">
+      <summary>
+            Draws new input controls.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawDictionaryTitle">
+      <summary>
+            Draws the title of the dictionary's <see cref="T:Rotorz.ReorderableList.ReorderableListControl" />.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.DrawOtherPropertiesGUI">
+      <summary>
+            The default implementation draws the GUI for each of the visible serialized
+            properties in the target <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAsset" />.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.KeysProperty"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.ListAdaptor"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.ListControl"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.NewInputKeyProperty">
+      <summary>
+            Gets the <see cref="T:UnityEditor.SerializedProperty" /> that represents the new input key.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.NewInputListAdaptor">
+      <summary>
+            Gets the <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> that is used to draw
+            input controls allowing the user to insert a new entry into the ordered
+            dictionary.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.NewInputSerializedObject">
+      <summary>
+            Gets the <see cref="T:UnityEditor.SerializedObject" /> that represents the new input.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.NewInputValueProperty">
+      <summary>
+            Gets the <see cref="T:UnityEditor.SerializedProperty" /> that represents the new input value.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.OnAddNewInputButtonClick">
+      <summary>
+            Occurs when the add new input button is clicked.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.OnDisable"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.OnEnable"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.OnInspectorGUI"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.OnNewInputContextClick">
+      <summary>
+            Occurrs when the user context clicks on the new input controls.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.ResetNewInput">
+      <summary>
+            Resets state of the new input controls.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetInspector.ValuesProperty"></member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor">
+      <summary>
+            Ordered dictionary asset adaptor for a <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> can
+            be subclassed to override its behavior.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.#ctor(Rotorz.Extras.Collections.OrderedDictionaryAsset,Rotorz.ReorderableList.SerializedPropertyAdaptor,Rotorz.ReorderableList.SerializedPropertyAdaptor)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor" /> class.
+            </summary>
+      <param name="target">The target object.</param>
+      <param name="keysPropertyAdaptor">The adaptor for the ordered dictionary's keys.</param>
+      <param name="valuesPropertyAdaptor">The adaptor for the ordered dictionary's values.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Add(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.BeginGUI"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.CanDrag(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.CanDropInsert(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.CanRemove(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Clear"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Count"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.EndGUI"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.GetItemHeight(System.Int32)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.HadNullKeyErrorOnLastRepaint">
+      <summary>
+            Indicates whether a null key error was encountered.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.KeysPropertyAdaptor"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Move(System.Int32,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.OnContextClickItem(System.Int32)">
+      <summary>
+            Occurs allowing a list item to respond to a context click.
+            </summary>
+      <param name="index">Zero-based index of the list item.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.ProcessDropInsertion(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Remove(System.Int32)"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.Target"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryAssetListAdaptor.ValuesPropertyAdaptor"></member>
+  </members>
+</doc>
