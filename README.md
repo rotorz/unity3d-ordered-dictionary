@@ -58,6 +58,19 @@ Example 1: Sprite Library (C#)
     public class SpriteLibrary : OrderedDictionaryAsset<string, Sprite> {
     }
 
+Example 2: Sprite Library (UnityScript)
+---------------------------------------
+
+    :::csharp
+    // SpriteLibrary.js
+    import Rotorz.Extras.Collections;
+
+	// Note: The `CreateAssetMenu` attribute requires Unity 5+
+
+	@CreateAssetMenu
+    class SpriteLibrary extends OrderedDictionaryAsset.<String, Sprite> {
+    }
+
 Submission to the Unity Asset Store
 -----------------------------------
 
