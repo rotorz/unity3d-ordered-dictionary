@@ -61,7 +61,7 @@ namespace Rotorz.Extras.Collections {
 						// Only show these warning messages when playing.
 						Debug.LogError("Encountered invalid null key.");
 					}
-                    continue;
+					continue;
 				}
 
 				if (!_dictionary.ContainsKey(key))

@@ -33,7 +33,7 @@ namespace Rotorz.Extras.Collections {
 			ValuesProperty = serializedObject.FindProperty("_values");
 
 			InitializeListControl();
-        }
+		}
 
 		protected virtual void OnDisable() {
 			CleanupNewInputInstance();
@@ -58,7 +58,7 @@ namespace Rotorz.Extras.Collections {
 		private void InitializeListControl() {
 			ListControl = CreateListControl();
 			ListAdaptor = CreateListAdaptor((OrderedDictionaryAsset)target);
-        }
+		}
 
 		/// <summary>
 		/// Creates the <see cref="ReorderableListControl"/> that will be used to draw
@@ -92,7 +92,7 @@ namespace Rotorz.Extras.Collections {
 		#endregion
 
 		#region New Input Data
-		
+
 		private OrderedDictionaryAsset _newInput;
 
 		private SerializedObject _newInputSerializedObject;
@@ -194,13 +194,13 @@ namespace Rotorz.Extras.Collections {
 		#region Dictionary GUI
 
 		private static GUIStyle s_AddButtonStyle;
-		
+
 		private static GUIStyle AddButtonStyle {
 			get {
 				if (s_AddButtonStyle == null) {
 					s_AddButtonStyle = new GUIStyle(ReorderableListStyles.FooterButton2);
 					s_AddButtonStyle.fixedHeight = 0f;
-                }
+				}
 				return s_AddButtonStyle;
 			}
 		}
@@ -214,7 +214,7 @@ namespace Rotorz.Extras.Collections {
 		protected string DictionaryTitleText {
 			get { return _dictionaryTitleText; }
 			set { _dictionaryTitleText = value; }
-        }
+		}
 
 		/// <summary>
 		/// Draws the dictionary GUI.
@@ -252,7 +252,7 @@ namespace Rotorz.Extras.Collections {
 			NewInputSerializedObject.Update();
 
 			var adaptor = NewInputListAdaptor;
-			
+
 			// Inclusive of the new input controls and the add button.
 			Rect totalPosition = GUILayoutUtility.GetRect(0, adaptor.GetItemHeight(0) + VerticalPadding);
 
@@ -265,15 +265,15 @@ namespace Rotorz.Extras.Collections {
 
 			// Background behind input controls excluding add button.
 			Rect backgroundPosition = totalPosition;
-            backgroundPosition.width -= AddButtonWidth + 5f;
-            if (Event.current.type == EventType.Repaint)
+			backgroundPosition.width -= AddButtonWidth + 5f;
+			if (Event.current.type == EventType.Repaint)
 				ReorderableListStyles.Container.Draw(backgroundPosition, GUIContent.none, false, false, false, false);
 
 			Rect newInputPosition = totalPosition;
 			newInputPosition.xMin += 24f;
 			newInputPosition.x -= 12f;
 			newInputPosition.y += HalfVerticalPadding;
-            newInputPosition.width -= AddButtonWidth;
+			newInputPosition.width -= AddButtonWidth;
 			newInputPosition.height -= VerticalPadding;
 
 			adaptor.BeginGUI();
@@ -316,7 +316,7 @@ namespace Rotorz.Extras.Collections {
 				bool dictionaryAlreadyContainsKey = newKeyValue != null && dictionary.ContainsKey(newKeyValue);
 
 				return !dictionaryAlreadyContainsKey && !isNullKey;
-            }
+			}
 		}
 
 		/// <summary>
@@ -342,7 +342,7 @@ namespace Rotorz.Extras.Collections {
 		}
 
 		private bool _hasNullKeyErrorOnLayout;
-		
+
 		/// <summary>
 		/// Draws error feedback relating to the ordered dictionary.
 		/// </summary>
@@ -354,7 +354,7 @@ namespace Rotorz.Extras.Collections {
 			if (Event.current.type == EventType.Layout)
 				_hasNullKeyErrorOnLayout = ListAdaptor.HadNullKeyErrorOnLastRepaint;
 			if (_hasNullKeyErrorOnLayout)
-                EditorGUILayout.HelpBox("One or more null keys were encountered.", MessageType.Error);
+				EditorGUILayout.HelpBox("One or more null keys were encountered.", MessageType.Error);
 		}
 
 		#endregion
@@ -390,12 +390,12 @@ namespace Rotorz.Extras.Collections {
 
 				EditorGUILayout.PropertyField(property, true);
 				++visiblePropertyCount;
-            }
+			}
 
 			if (visiblePropertyCount != 0)
 				EditorGUILayout.Space();
 		}
-		
+
 		#endregion
 
 	}

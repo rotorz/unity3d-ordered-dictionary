@@ -35,7 +35,7 @@ namespace Rotorz.Extras.Collections {
 		/// <param name="valuesPropertyAdaptor">The adaptor for the ordered dictionary's values.</param>
 		public OrderedDictionaryAssetListAdaptor(OrderedDictionaryAsset target, SerializedPropertyAdaptor keysPropertyAdaptor, SerializedPropertyAdaptor valuesPropertyAdaptor) {
 			Target = target;
-            KeysPropertyAdaptor = keysPropertyAdaptor;
+			KeysPropertyAdaptor = keysPropertyAdaptor;
 			ValuesPropertyAdaptor = valuesPropertyAdaptor;
 		}
 
@@ -79,7 +79,7 @@ namespace Rotorz.Extras.Collections {
 			var addedValueProperty = ValuesPropertyAdaptor.arrayProperty.GetArrayElementAtIndex(count - 1);
 			SerializedPropertyUtility.CopyPropertyValue(addedKeyProperty, inputKeyProperty);
 			SerializedPropertyUtility.CopyPropertyValue(addedValueProperty, inputValueProperty);
-        }
+		}
 
 		/// <inheritdoc/>
 		void IReorderableListAdaptor.Duplicate(int index) {
@@ -116,7 +116,7 @@ namespace Rotorz.Extras.Collections {
 		public virtual float GetItemHeight(int index) {
 			float keyHeight = KeysPropertyAdaptor.GetItemHeight(index);
 			float valueHeight = ValuesPropertyAdaptor.GetItemHeight(index);
-            return Mathf.Max(keyHeight, valueHeight);
+			return Mathf.Max(keyHeight, valueHeight);
 		}
 
 		/// <inheritdoc/>
@@ -146,14 +146,14 @@ namespace Rotorz.Extras.Collections {
 			if (!Target._suppressErrors) {
 				var key = Target.GetKeyFromIndex(index);
 
-                if (Target.KeysWithDuplicateValues.Contains(key))
+				if (Target.KeysWithDuplicateValues.Contains(key))
 					GUI.color = Color.red;
 
 				if (key == null) {
 					HadNullKeyErrorOnLastRepaint = true;
-                    GUI.color = new Color(1f, 0f, 1f);
+					GUI.color = new Color(1f, 0f, 1f);
 				}
-            }
+			}
 
 			Rect keyPosition = position;
 			keyPosition.width /= 3f;

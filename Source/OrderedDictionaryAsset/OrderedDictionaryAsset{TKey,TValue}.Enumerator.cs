@@ -30,9 +30,9 @@ namespace Rotorz.Extras.Collections {
 				_version = dictionary._version;
 				_returnDictionaryEntry = returnDictionaryEntry;
 
-                _index = 0;
+				_index = 0;
 				_current = default(KeyValuePair<TKey, TValue>);
-            }
+			}
 
 			/// <inheritdoc/>
 			void IDisposable.Dispose() {

@@ -38,7 +38,7 @@ namespace Rotorz.Extras.Collections {
 		#endregion
 
 		#region Ordered Lookup
-		
+
 		/// <summary>
 		/// Gets the total count of entries in the dictionary.
 		/// </summary>
@@ -82,7 +82,7 @@ namespace Rotorz.Extras.Collections {
 		/// <see cref="Count"/>
 		public object GetKeyFromIndex(int index) {
 			return GetKeyFromIndexInternal(index);
-        }
+		}
 
 		/// <summary>
 		/// Gets the value of the entry at the specified index.
@@ -98,7 +98,7 @@ namespace Rotorz.Extras.Collections {
 		/// <see cref="Count"/>
 		public object GetValueFromIndex(int index) {
 			return GetValueFromIndexInternal(index);
-        }
+		}
 
 		/// <summary>
 		/// Determines whether the dictionary contains the untyped key.
