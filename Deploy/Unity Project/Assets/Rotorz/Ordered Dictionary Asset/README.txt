@@ -35,7 +35,7 @@ contains a compiled class library (DLL). This can be used by C# and UnityScript
 developers. Minimal version of package does not include demonstration assets or
 zip archive of image source resources.
 
-- [Download RotorzOrderedDictionaryAsset_v0.1.1 Package (requires Unity 4.5.5+)](<https://bitbucket.org/rotorz/ordered-dictionary-asset-for-unity/downloads/RotorzOrderedDictionaryAsset_v0.1.1.unitypackage>)
+- [Download RotorzOrderedDictionaryAsset_v0.2.0 Package (requires Unity 4.5.5+)](<https://bitbucket.org/rotorz/ordered-dictionary-asset-for-unity/downloads/RotorzOrderedDictionaryAsset_v0.2.0.unitypackage>)
 
 If you would prefer to use the non-compiled source code version in your project,
 copy the contents of this repository somewhere into your project.
@@ -52,13 +52,34 @@ Example 1: Sprite Library (C#)
     :::csharp
     // SpriteLibrary.cs
     using Rotorz.Extras.Collections;
-	using UnityEditor;
+    using UnityEditor;
     using UnityEngine;
 
-	// Note: The `CreateAssetMenu` attribute requires Unity 5+
+    // Note: The `CreateAssetMenu` attribute requires Unity 5+
 
-	[CreateAssetMenu]
+    [CreateAssetMenu]
     public class SpriteLibrary : OrderedDictionaryAsset<string, Sprite> {
+
+        // Additional properties are shown above the "Entries" interface.
+        public string customStringProperty = "Hello World!";
+
+    }
+
+Example 2: Sprite Library (UnityScript)
+---------------------------------------
+
+    :::csharp
+    // SpriteLibrary.js
+    import Rotorz.Extras.Collections;
+
+    // Note: The `CreateAssetMenu` attribute requires Unity 5+
+
+    @CreateAssetMenu
+    class SpriteLibrary extends OrderedDictionaryAsset.<String, Sprite> {
+
+        // Additional properties are shown above the "Entries" interface.
+        var customStringProperty:String = 'Hello World!';
+
     }
 
 Submission to the Unity Asset Store
