@@ -57,7 +57,7 @@ namespace Rotorz.Extras.Collections {
 				var key = _keys[i];
 
 				if (key == null) {
-					if (!_suppressErrors && Application.isPlaying) {
+					if (!_suppressErrors) {
 						// Only show these warning messages when playing.
 						Debug.LogError("Encountered invalid null key.");
 					}
@@ -70,11 +70,9 @@ namespace Rotorz.Extras.Collections {
 					_keysWithDuplicateValues.Add(key);
 			}
 
-			if (Application.isPlaying) {
-				// Only show these warning messages when playing.
-				foreach (var key in _keysWithDuplicateValues)
-					Debug.Log(string.Format("Has multiple values for the key '{0}'.", key));
-			}
+			// Only show these warning messages when playing.
+			foreach (var key in _keysWithDuplicateValues)
+				Debug.Log(string.Format("Has multiple values for the key '{0}'.", key));
 		}
 
 		protected virtual void OnBeforeSerialize() {
