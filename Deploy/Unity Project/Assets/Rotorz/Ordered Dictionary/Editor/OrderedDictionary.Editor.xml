@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>OrderedDictionary.Editor</name>
+  </assembly>
+  <members>
+    <member name="T:Rotorz.Extras.Collections.IEditableOrderedDictionaryContext">
+      <summary>
+            Interface represents the context of an editable entry.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.IEditableOrderedDictionaryContext.ControlID">
+      <summary>
+            Gets the unique value that identifies the control.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.IEditableOrderedDictionaryContext.CreateListAdaptor(UnityEditor.SerializedProperty)">
+      <summary>
+            Creates a <see cref="T:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor" /> that will be used to draw and
+            manipulate the list of ordered dictionary entries.
+            </summary>
+      <param name="dictionaryProperty">Property representing the ordered dictionary.</param>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor" /> instance.
+            </returns>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.IEditableOrderedDictionaryContext.OrderedDictionary">
+      <summary>
+            Gets the ordered dictionary that is being edited.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.IEditableOrderedDictionaryContext.OrderedDictionaryType">
+      <summary>
+            Gets the type of the ordered dictionary.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor">
+      <summary>
+            Interface represents the context of an editable entry.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor.Add(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+      <summary>
+            Adds a new entry to the ordered dictionary.
+            </summary>
+      <param name="inputKeyProperty">Key for the new entry (will be copied from
+            another serialized object).</param>
+      <param name="inputValueProperty">Value for the new entry (will be copied from
+            another serialized object).</param>
+      <exception cref="T:System.InvalidOperationException">
+            If entry cannot be added because the collection has an inconsistent quantity
+            of keys and values.
+            </exception>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor.HadNullKeyErrorOnLastRepaint">
+      <summary>
+            Gets a value indicating whether a null key error was encountered.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor">
+      <summary>
+            Ordered dictionary asset adaptor for a <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> can
+            be subclassed to override its behavior.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.#ctor(Rotorz.Extras.Collections.OrderedDictionary,Rotorz.ReorderableList.SerializedPropertyAdaptor,Rotorz.ReorderableList.SerializedPropertyAdaptor)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor" /> class.
+            </summary>
+      <param name="target">The target object.</param>
+      <param name="keysPropertyAdaptor">The adaptor for the ordered dictionary's keys.</param>
+      <param name="valuesPropertyAdaptor">The adaptor for the ordered dictionary's values.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Add(UnityEditor.SerializedProperty,UnityEditor.SerializedProperty)">
+      <summary>
+            Adds a new entry to the ordered dictionary.
+            </summary>
+      <param name="inputKeyProperty">Key for the new entry (will be copied from
+            another serialized object).</param>
+      <param name="inputValueProperty">Value for the new entry (will be copied from
+            another serialized object).</param>
+      <exception cref="T:System.InvalidOperationException">
+            If entry cannot be added because the collection has an inconsistent quantity
+            of keys and values.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.BeginGUI"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.CanDrag(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.CanDropInsert(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.CanRemove(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Clear"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Count"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.DrawItem(UnityEngine.Rect,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.DrawItemBackground(UnityEngine.Rect,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.EndGUI"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.GetItemHeight(System.Int32)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.HadNullKeyErrorOnLastRepaint">
+      <summary>
+            Gets a value indicating whether a null key error was encountered.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.KeysPropertyAdaptor"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Move(System.Int32,System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.OnContextClickItem(System.Int32)">
+      <summary>
+            Occurs allowing a list item to respond to a context click.
+            </summary>
+      <param name="index">Zero-based index of the list item.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.ProcessDropInsertion(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Remove(System.Int32)"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.Target"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryListAdaptor.ValuesPropertyAdaptor"></member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager">
+      <summary>
+            Manages the active ordered dictionary new entry editor.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.ActiveControlID">
+      <summary>
+            Gets the unique identifier of the active new entry control.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.CanAddNewEntry(System.Guid)">
+      <summary>
+            Determines whether the current new entry can be added to the specified control.
+            </summary>
+      <param name="controlID">Unique identifier of the specified control.</param>
+      <returns>
+            A value of <c>true</c> if the current new entry can be added to the specified
+            control; otherwise, a value of <c>false</c>.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.DiscardActiveNewEntry">
+      <summary>
+            Discard any current active editable entry.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.NewEntryKeyProperty">
+      <summary>
+            Gets a <see cref="T:UnityEditor.SerializedProperty" /> for the key property of the new entry.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.NewEntryListAdaptor">
+      <summary>
+            Gets the ordered dictionary list adaptor that is used to draw the 'new entry' field.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.NewEntryObject">
+      <summary>
+            Gets a <see cref="T:UnityEditor.SerializedObject" /> for the new entry object.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.NewEntryValueProperty">
+      <summary>
+            Gets a <see cref="T:UnityEditor.SerializedProperty" /> for the value property of the new entry.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.ResetActiveNewEntry">
+      <summary>
+            Resets state of the new entry input controls.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryNewEntryManager.SetActiveNewEntry(Rotorz.Extras.Collections.IEditableOrderedDictionaryContext)">
+      <summary>
+            Activates the 'new entry' editor for a specified control.
+            </summary>
+      <param name="context">Context of the editable entry.</param>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer">
+      <summary>
+            Inspector that is assumed by default for all <see cref="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OrderedDictionary" />
+            subclasses but can be subclassed to override its behavior.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer" /> class.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.CanAddNewInput">
+      <summary>
+            Gets a value indicating whether the user can click the add new input button.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.ControlID">
+      <summary>
+            Gets the unique value that identifies the control.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.CreateListAdaptor(UnityEditor.SerializedProperty)">
+      <summary>
+            Creates a <see cref="T:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor" /> that will be used to draw and
+            manipulate the list of ordered dictionary entries.
+            </summary>
+      <param name="dictionaryProperty">Property representing the ordered dictionary.</param>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.IOrderedDictionaryListAdaptor" /> instance.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.CreateListControl">
+      <summary>
+            Creates the <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> that will be used to draw
+            and manipulate the list of ordered dictionary entries.
+            </summary>
+      <returns>
+            The new <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> instance.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.DrawAddNewBackground(UnityEngine.Rect)">
+      <summary>
+            Draws background behind new input controls.
+            </summary>
+      <param name="position">Absolute position of the background.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.DrawAddNewInputButton(UnityEngine.Rect)">
+      <summary>
+            Draws button for adding new input.
+            </summary>
+      <param name="position">Absolute position of button in GUI.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.DrawDictionaryListControl(UnityEngine.Rect)">
+      <summary>
+            Draws the <see cref="T:Rotorz.ReorderableList.ReorderableListControl" /> using the <see cref="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.ListAdaptor" />.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.DrawDictionaryNewInput(UnityEngine.Rect)">
+      <summary>
+            Draws new input controls.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.EndSpacing"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.ListAdaptor"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.ListControl"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.NewInputPlaceholderHeight"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.NewInputSpacing"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OnAddNewInputButtonClick">
+      <summary>
+            Occurs when the add new input button is clicked.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OnNewInputContextClick">
+      <summary>
+            Occurrs when the user context clicks on the new input controls.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OrderedDictionary">
+      <summary>
+            Gets the ordered dictionary that is being edited.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.OrderedDictionaryType">
+      <summary>
+            Gets the type of the ordered dictionary.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.TitleHeight"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionaryPropertyDrawer.UpdateDictionaryErrors">
+      <summary>
+            Draws error feedback relating to the ordered dictionary.
+            </summary>
+    </member>
+  </members>
+</doc>

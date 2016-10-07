@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>OrderedDictionary</name>
+  </assembly>
+  <members>
+    <member name="T:Rotorz.Extras.Collections.EditableEntry">
+      <summary>
+            A class with a <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> field that can be used to draw
+            an 'Add Entry' control below the entries of an actual <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" />
+            in an editor interface (i.e. the inspector).
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.EditableEntry.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Rotorz.Extras.Collections.EditableEntry</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry.Dictionary">
+      <summary>
+            Gets the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> that has exactly one key/value entry.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry.Key">
+      <summary>
+            Gets the user input for the new entry key.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry.Value">
+      <summary>
+            Gets the user input for the new entry value.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.EditableEntry`1">
+      <summary>
+            A class with a <see cref="!:OrderedDictionary&lt;TOrderedDictionary&gt;" /> field that can
+            be used to draw an 'Add Entry' control below the entries of an actual <see cref="!:OrderedDictionary&lt;TOrderedDictionary&gt;" />
+            in an editor interface (i.e. the inspector).
+            </summary>
+      <typeparam name="TOrderedDictionary">Type of ordered dictionary that is to be edited.</typeparam>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.EditableEntry`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Rotorz.Extras.Collections.EditableEntry`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry`1.Dictionary">
+      <summary>
+            Gets the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> that has exactly one key/value entry.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry`1.Key">
+      <summary>
+            Gets the user input for the new entry key.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntry`1.Value">
+      <summary>
+            Gets the user input for the new entry value.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.EditableEntryAttribute">
+      <summary>
+            Associates a type of <see cref="T:Rotorz.Extras.Collections.EditableEntry" /> with a type of <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" />.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.EditableEntryAttribute.#ctor(System.Type)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.EditableEntryAttribute" /> class.
+            </summary>
+      <param name="editableEntryType">The type of editable entry.</param>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.EditableEntryAttribute.EditableEntryType">
+      <summary>
+            Gets the type of <see cref="T:Rotorz.Extras.Collections.EditableEntry" /> that is to be associated with
+            the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> class.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary">
+      <summary>
+            Base class for a serializable ordered dictionary asset. Custom dictionary asset
+            classes should inherit from the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2" />
+            generic class instead.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.#ctor(System.Type,System.Type)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> class.
+            </summary>
+      <param name="keyType">Data type of a key.</param>
+      <param name="valueType">Data type of a value.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.ContainsKey(System.Object)">
+      <summary>
+            Determines whether the dictionary contains the untyped key.
+            </summary>
+      <param name="key">Key to lookup.</param>
+      <returns>
+            A value of <c>true</c> if dictionary contains an entry with the specified key.
+            Always returns a value of <c>false</c> if the specified key is not of the type
+            <see cref="P:Rotorz.Extras.Collections.OrderedDictionary.KeyType" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+            If <paramref name="key" /> is <c>null</c>.
+            </exception>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary.Count">
+      <summary>
+            Gets the total count of entries in the dictionary.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.GetKeyFromIndex(System.Int32)">
+      <summary>
+            Gets the key of the entry at the specified index.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.GetKeyFromIndexInternal(System.Int32)">
+      <summary>
+            Implements the public interface <see cref="M:Rotorz.Extras.Collections.OrderedDictionary.GetKeyFromIndex(System.Int32)" />.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.GetValueFromIndex(System.Int32)">
+      <summary>
+            Gets the value of the entry at the specified index.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary.GetValueFromIndexInternal(System.Int32)">
+      <summary>
+            Implements the public interface <see cref="M:Rotorz.Extras.Collections.OrderedDictionary.GetValueFromIndex(System.Int32)" />.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary.KeysWithDuplicateValues">
+      <summary>
+            Gets the collection of keys that somehow have two or more associated values.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary.KeyType">
+      <summary>
+            Gets the data type of a key.
+            </summary>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary.ValueType">
+      <summary>
+            Gets the data type of a value.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2">
+      <summary>
+            Base class for a serializable ordered dictionary asset. Custom dictionary asset
+            classes should inherit from this class since Unity is currently unable to
+            serialize instances of generic types.
+            </summary>
+      <typeparam name="TKey">Type of key.</typeparam>
+      <typeparam name="TValue">Type of value.</typeparam>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary" /> class.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Add(`0,`1)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Clear"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ContainsKey(System.Object)">
+      <summary>
+            Determines whether the dictionary contains the untyped key.
+            </summary>
+      <param name="key">Key to lookup.</param>
+      <returns>
+            A value of <c>true</c> if dictionary contains an entry with the specified key.
+            Always returns a value of <c>false</c> if the specified key is not of the type
+            <see cref="P:Rotorz.Extras.Collections.OrderedDictionary.KeyType" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+            If <paramref name="key" /> is <c>null</c>.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ContainsKey(`0)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Count">
+      <summary>
+            Gets the total count of entries in the dictionary.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionary`2.dictionary"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.GetEnumerator">
+      <summary>
+            Gets an object for enumerating over the ordered collection of keys and values.
+            </summary>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator" />.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.GetKeyFromIndex(System.Int32)">
+      <summary>
+            Gets the key of the entry at the specified index.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.GetKeyFromIndexInternal(System.Int32)">
+      <summary>
+            Implements the public interface <see cref="M:Rotorz.Extras.Collections.OrderedDictionary.GetKeyFromIndex(System.Int32)" />.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.GetValueFromIndex(System.Int32)">
+      <summary>
+            Gets the value of the entry at the specified index.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.GetValueFromIndexInternal(System.Int32)">
+      <summary>
+            Implements the public interface <see cref="M:Rotorz.Extras.Collections.OrderedDictionary.GetValueFromIndex(System.Int32)" />.
+            </summary>
+      <param name="index">Zero-based index of entry in ordered dictionary.</param>
+      <returns>
+            The key.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range.
+            </exception>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.IndexOf(`0)">
+      <summary>
+            Determines the index of an item with a aspecific key in the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2" />.
+            </summary>
+      <param name="key">The key of the entry to locate in the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2" />.</param>
+      <returns>
+            The zero-based index of the entry when found; otherwise, a value of <c>-1</c>.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Insert(System.Int32,`0,`1)">
+      <summary>
+            Insert new entry into the ordered dictionary.
+            </summary>
+      <param name="index">Zero-based index at which to insert the new entry.</param>
+      <param name="key">Unique key for the new entry.</param>
+      <param name="value">Value for the new entry.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of the range of the ordered dictionary.
+            </exception>
+      <exception cref="T:System.ArgumentNullException">
+            If <paramref name="key" /> is <c>null</c>.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            If dictionary already contains an entry with the specified key.
+            </exception>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Item(`0)"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionary`2.keys"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Keys">
+      <summary>
+            Gets the read-only ordered collection of keys.
+            </summary>
+    </member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionary`2.keysWithDuplicateValues"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.KeysWithDuplicateValues">
+      <summary>
+            Gets the collection of keys that somehow have two or more associated values.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.OnAfterDeserialize"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.OnBeforeSerialize"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Remove(`0)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.RemoveAt(System.Int32)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.TryGetValue(`0,`1@)"></member>
+    <member name="F:Rotorz.Extras.Collections.OrderedDictionary`2.values"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Values">
+      <summary>
+            Gets the read-only ordered collection of values.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator">
+      <summary>
+            Enumerator for enumerating through the key/value pairs of an ordered dictionary.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator.#ctor(Rotorz.Extras.Collections.OrderedDictionary{`0,`1},System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator" /> structure.
+            </summary>
+      <param name="dictionary">The associated dictionary.</param>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator.Current"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator.Key">
+      <summary>
+            Gets the key of the current entry.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator.MoveNext"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.Enumerator.Value">
+      <summary>
+            Gets the value of the current entry.
+            </summary>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection">
+      <summary>
+            A read-only ordered collection of keys from the associated <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2" /> instance.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.#ctor(Rotorz.Extras.Collections.OrderedDictionary{`0,`1})">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection" /> class.
+            </summary>
+      <param name="dictionary">The associated dictionary.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Contains(`0)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.CopyTo(`0[],System.Int32)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Count"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.GetEnumerator">
+      <summary>
+            Gets an object for enumerating over the ordered collection of keys.
+            </summary>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator" />.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.IndexOf(`0)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Item(System.Int32)">
+      <summary>
+            Gets key of entry at a specific index in the ordered dictionary.
+            </summary>
+      <param name="index">Zero-based index of entry.</param>
+      <returns>
+            The <see cref="!:TKey" />.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range of the collection.
+            </exception>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator">
+      <summary>
+            Enumerator for enumerating through the keys of an ordered dictionary.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator.#ctor(Rotorz.Extras.Collections.OrderedDictionary{`0,`1})">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator" /> structure.
+            </summary>
+      <param name="dictionary">The associated dictionary.</param>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator.Current"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator.MoveNext"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator.Reset"></member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection">
+      <summary>
+            A read-only ordered collection of values from the associated <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2" /> instance.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.#ctor(Rotorz.Extras.Collections.OrderedDictionary{`0,`1})">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection" /> class.
+            </summary>
+      <param name="dictionary">The associated dictionary.</param>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Contains(`1)"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.CopyTo(`1[],System.Int32)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Count"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.GetEnumerator">
+      <summary>
+            Gets an object for enumerating over the ordered collection of values.
+            </summary>
+      <returns>
+            The new <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator" />.
+            </returns>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.IndexOf(`1)"></member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Item(System.Int32)">
+      <summary>
+            Gets value of entry at a specific index in the ordered dictionary.
+            </summary>
+      <param name="index">Zero-based index of entry.</param>
+      <returns>
+            The <see cref="!:TValue" />.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="index" /> is out of range of the collection.
+            </exception>
+    </member>
+    <member name="T:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator">
+      <summary>
+            Enumerator for enumerating through the values of an ordered dictionary.
+            </summary>
+    </member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator.#ctor(Rotorz.Extras.Collections.OrderedDictionary{`0,`1})">
+      <summary>
+            Initializes a new instance of the <see cref="T:Rotorz.Extras.Collections.OrderedDictionary`2.KeyCollection.Enumerator" /> structure.
+            </summary>
+      <param name="dictionary">The associated dictionary.</param>
+    </member>
+    <member name="P:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator.Current"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator.MoveNext"></member>
+    <member name="M:Rotorz.Extras.Collections.OrderedDictionary`2.ValueCollection.Enumerator.Reset"></member>
+  </members>
+</doc>
