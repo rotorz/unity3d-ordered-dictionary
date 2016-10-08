@@ -29,6 +29,13 @@ from the following BitBucket repository:
 
 https://bitbucket.org/rotorz/reorderable-list-editor-field-for-unity
 
+Boilerplate Generation Tool
+---------------------------
+
+This is a simple client side (offline) tool that runs to quickly generate the boilerplate that Unity needs to make the Ordered Dictionary for Unity library work since Unity doesn't currently support serialization with generic types:
+
+http://rotorz.com/unity/misc/ordered-dictionary-boilerplate-generator
+
 Installing scripts
 ------------------
 
