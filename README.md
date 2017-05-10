@@ -1,18 +1,24 @@
-README
-======
+# unity3d-ordered-dictionary
+
+[![npm version](https://badge.fury.io/js/%40rotorz%2Funity3d-ordered-dictionary.svg)](https://badge.fury.io/js/%40rotorz%2Funity3d-ordered-dictionary)
+[![Dependency Status](https://david-dm.org/rotorz/unity3d-ordered-dictionary.svg)](https://david-dm.org/rotorz/unity3d-ordered-dictionary)
+[![devDependency Status](https://david-dm.org/rotorz/unity3d-ordered-dictionary/dev-status.svg)](https://david-dm.org/rotorz/unity3d-ordered-dictionary#info=devDependencies)
 
 Library for adding ordered dictionaries to custom `ScriptableObject` and `MonoBehaviour`
 classes in a way that can be serialized by Unity provided that the key and value types
 are serializable.
 
-Licensed under the MIT license. See LICENSE file in the project root for full license
-information. DO NOT contribute to this project unless you accept the terms of the
-contribution agreement.
 
-![screenshot](https://bitbucket.org/rotorz/ordered-dictionary-for-unity/raw/master/screenshot.png)
+```sh
+$ npm install --save @rotorz/unity3d-ordered-dictionary
+```
 
-Features
---------
+This package is compatible with [unity3d-package-syncer](https://github.com/rotorz/unity3d-package-syncer).
+
+![screenshot](screenshot.png)
+
+
+## Features
 
 - Default inspector with intuitive interface.
 - Drop insertion for UnityEngine.Object's where name is used for key.
@@ -21,129 +27,97 @@ Features
 - Supports any serializable key and value types.
 - Ordered dictionary.
 
-Dependencies
-------------
 
-Requires Rotorz Reorderable List Control which is open source and can be downloaded
-from the following BitBucket repository:
+## Installation
 
-https://bitbucket.org/rotorz/reorderable-list-editor-field-for-unity
+The **unity3d-ordered-dictionary** library is designed to be installed into Unity projects
+using the **npm** package manager and then synchronized into the "Assets" directory using
+the **unity3d-package-syncer** utility. For more information regarding this workflow refer
+to the [unity3d-package-syncer](https://github.com/rotorz/unity3d-package-syncer)
+repository.
 
-Boilerplate Generation Tool
----------------------------
-
-This is a simple client side (offline) tool that runs to quickly generate the boilerplate that Unity needs to make the Ordered Dictionary for Unity library work since Unity doesn't currently support serialization with generic types:
-
-http://rotorz.com/unity/misc/ordered-dictionary-boilerplate-generator
-
-Installing scripts
-------------------
-
-This control can be added to your project by importing the Unity package which
-contains a compiled class library (DLL). This can be used by C# and UnityScript
-developers.
-
-- [Download RotorzOrderedDictionary_v0.3.0 Package (requires Unity 5.4.0+)](<https://bitbucket.org/rotorz/ordered-dictionary-for-unity/downloads/RotorzOrderedDictionary_v0.3.0.unitypackage>)
-
-If you would prefer to use the non-compiled source code version in your project,
-copy the contents of this repository somewhere into your project.
-
-**Note to UnityScript (*.js) developers:**
-
-UnityScript will not work with the source code version of this project unless
-the contents of this repository is placed at the path "Assets/Plugins/OrderedDictionary"
-due to compilation ordering.
-
-Example 1: Sprite Library
--------------------------
-
-    :::csharp
-    // StringSpriteDictionaryEditable.cs
-    using Rotorz.Extras.Collections;
-    using System;
-    using UnityEngine;
-
-	// Script filename must match this class.
-    public sealed class StringSpriteDictionaryEditable : EditableEntry<StringSpriteDictionary>
-    {
-    }
-
-	// This class can exist in same file with any name.
-    [Serializable, EditableEntry(typeof(StringSpriteDictionaryEditable))]
-    public sealed class StringSpriteDictionary : OrderedDictionary<string, Sprite>
-    {
-    }
+Alternatively you can download the contents of this repository and add directly into your
+project, but you would also need to download the sources of other packages that this
+package is dependant upon. Refer to the `packages.json` file to see these.
 
 
-    // SpriteLibrary.cs
-    using UnityEditor;
-    using UnityEngine;
+## Boilerplate Generation Tool
 
-    [CreateAssetMenu]
-    public class SpriteLibrary : ScriptableObject
-	{
-		public StringSpriteDictionary sprites;
-    }
+This is a simple client side (offline) tool that runs to quickly generate the boilerplate
+that Unity needs to make the Ordered Dictionary for Unity library work since Unity doesn't
+currently support serialization with generic types:
 
-Example 2: String Lookup Table
-------------------------------
-
-![screenshot2](https://bitbucket.org/rotorz/ordered-dictionary-for-unity/raw/master/screenshot2.png)
-
-    :::csharp
-    // StringStringDictionaryEditable.cs
-    using Rotorz.Extras.Collections;
-    using System;
-    using UnityEngine;
-
-	// Script filename must match this class.
-    public sealed class StringStringDictionaryEditable : EditableEntry<StringStringDictionary>
-    {
-    }
-
-	// This class can exist in same file with any name.
-    [Serializable, EditableEntry(typeof(StringStringDictionaryEditable))]
-    public sealed class StringStringDictionary : OrderedDictionary<string, string>
-    {
-    }
+http://rotorz.com/unity/misc/ordered-dictionary-boilerplate
 
 
-    // AchievementNamesBehaviour.cs
-    using UnityEditor;
-    using UnityEngine;
+## A couple of examples!
 
-    public class AchievementNamesBehaviour : MonoBehaviour
-	{
-		public StringStringDictionary names;
-    }
+### Sprite Library
 
-Submission to the Unity Asset Store
------------------------------------
+```csharp
+// StringSpriteDictionaryEditable.cs
+using Rotorz.Games.Collections;
+using System;
+using UnityEngine;
 
-If you wish to include this asset as part of a package for the asset store, please
-include the latest package version as-is to avoid conflict issues in user projects.
-It is important that license and documentation files are included and remain intact.
+// Script filename must match this class.
+public sealed class StringSpriteDictionaryEditable : EditableEntry<StringSpriteDictionary>
+{
+}
 
-**To include a modified version within your package:**
+// This class can exist in same file with any name.
+[Serializable, EditableEntry(typeof(StringSpriteDictionaryEditable))]
+public sealed class StringSpriteDictionary : OrderedDictionary<string, Sprite>
+{
+}
 
-- Ensure that license and documentation files are included and remain intact. It should
-  be clear that these relate to the ordered dictionary asset library.
 
-- Copyright and license information must remain intact in source files.
+// SpriteLibrary.cs
+using UnityEditor;
+using UnityEngine;
 
-- Change the namespace `Rotorz` to something unique and DO NOT use the
-  name "Rotorz". For example, `YourName.Collections` or `YourName.Internal.Collections`.
+[CreateAssetMenu]
+public class SpriteLibrary : ScriptableObject
+{
+	public StringSpriteDictionary sprites;
+}
+```
 
-- Place files somewhere within your own asset folder to avoid causing conflicts with
-  other assets which make use of this project.
 
-Useful links
-------------
+### String Lookup Table
 
-- [Rotorz Website](<http://rotorz.com>)
+![screenshot2](screenshot2.png)
 
-Contribution Agreement
-----------------------
+```csharp
+// StringStringDictionaryEditable.cs
+using Rotorz.Games.Collections;
+using System;
+using UnityEngine;
+
+// Script filename must match this class.
+public sealed class StringStringDictionaryEditable : EditableEntry<StringStringDictionary>
+{
+}
+
+// This class can exist in same file with any name.
+[Serializable, EditableEntry(typeof(StringStringDictionaryEditable))]
+public sealed class StringStringDictionary : OrderedDictionary<string, string>
+{
+}
+
+
+// AchievementNamesBehaviour.cs
+using UnityEditor;
+using UnityEngine;
+
+public class AchievementNamesBehaviour : MonoBehaviour
+{
+	public StringStringDictionary names;
+}
+```
+
+
+## Contribution Agreement
 
 This project is licensed under the MIT license (see LICENSE). To be in the best
 position to enforce these licenses the copyright status of this project needs to
