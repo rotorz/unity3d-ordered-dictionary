@@ -17,7 +17,7 @@
     "unity3d-package"
   ],
   "dependencies": {
-    "@rotorz/unity3d-reorderable-list": "~1.0.0",
-    "@rotorz/unity3d-utils": "~1.0.0"
+    "@rotorz/unity3d-reorderable-list": "github:rotorz/unity3d-reorderable-list#semver:^1.0.0",
+    "@rotorz/unity3d-utils": "github:rotorz/unity3d-utils#semver:^1.0.0"
   }
 }

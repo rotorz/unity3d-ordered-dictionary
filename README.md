@@ -1,16 +1,12 @@
 # unity3d-ordered-dictionary
 
-[![npm version](https://badge.fury.io/js/%40rotorz%2Funity3d-ordered-dictionary.svg)](https://badge.fury.io/js/%40rotorz%2Funity3d-ordered-dictionary)
-[![Dependency Status](https://david-dm.org/rotorz/unity3d-ordered-dictionary.svg)](https://david-dm.org/rotorz/unity3d-ordered-dictionary)
-[![devDependency Status](https://david-dm.org/rotorz/unity3d-ordered-dictionary/dev-status.svg)](https://david-dm.org/rotorz/unity3d-ordered-dictionary#info=devDependencies)
-
 Library for adding ordered dictionaries to custom `ScriptableObject` and `MonoBehaviour`
 classes in a way that can be serialized by Unity provided that the key and value types
 are serializable.
 
 
 ```sh
-$ npm install --save @rotorz/unity3d-ordered-dictionary
+$ npm install --save rotorz/unity3d-ordered-dictionary
 ```
 
 This package is compatible with [unity3d-package-syncer](https://github.com/rotorz/unity3d-package-syncer).
