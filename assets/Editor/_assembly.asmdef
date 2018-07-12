@@ -1,0 +1,8 @@
+{
+    "name": "rotorz.unity3d-ordered-dictionary.editor",
+    "references": [
+        "rotorz.unity3d-ordered-dictionary",
+        "rotorz.unity3d-reorderable-list",
+        "rotorz.unity3d-utils"
+    ]
+}
