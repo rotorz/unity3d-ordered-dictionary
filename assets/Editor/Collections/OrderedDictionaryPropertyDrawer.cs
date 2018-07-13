@@ -317,8 +317,8 @@ namespace Rotorz.Games.Collections
         {
             EditorGUI.BeginDisabledGroup(!this.CanAddNewInput);
 
-            var addButtonNormal = ReorderableListStyles.Instance.Skin.Icon_Add_Normal;
-            var addButtonActive = ReorderableListStyles.Instance.Skin.Icon_Add_Active;
+            var addButtonNormal = ReorderableListStyles.Skin.Icon_Add_Normal;
+            var addButtonActive = ReorderableListStyles.Skin.Icon_Add_Active;
             if (ExtraEditorGUI.IconButton(position, addButtonNormal, addButtonActive, AddButtonStyle)) {
                 this.OnAddNewInputButtonClick();
             }
