@@ -3,6 +3,7 @@
     "references": [
         "rotorz.unity3d-ordered-dictionary",
         "rotorz.unity3d-reorderable-list",
-        "rotorz.unity3d-utils"
+        "rotorz.unity3d-reorderable-list.editor",
+        "rotorz.unity3d-utils.editor"
     ]
 }
