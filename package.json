@@ -1,6 +1,6 @@
 {
   "name": "@rotorz/unity3d-ordered-dictionary",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library for adding ordered dictionaries to custom `ScriptableObject` and `MonoBehaviour` classes in a way that can be serialized by Unity provided that the key and value types are serializable.",
   "main": "index.js",
   "scripts": {
