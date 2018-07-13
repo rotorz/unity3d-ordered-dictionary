@@ -5,5 +5,11 @@
         "rotorz.unity3d-reorderable-list",
         "rotorz.unity3d-reorderable-list.editor",
         "rotorz.unity3d-utils.editor"
-    ]
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
 }
